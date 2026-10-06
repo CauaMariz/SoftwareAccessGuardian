@@ -88,26 +88,46 @@
             <!--
                 Este é o bloco2 que contem toda a informacao de login do usuario
                 -->
-                <div class="bloco2-content-page">
-                    
-                    <p class="title-login-content-page">Login</p>
-                    
-                    <!--
+            <div class="bloco2-content-page">
+
+                <p class="title-login-content-page">Login</p>
+
+                <!--
                         Este é o formulario que abriga os inputs e dereciona o usuario para as proximas etapas
                         -->
-                        <form action="" class="form-login-content-page">
-                            <input type="email" id="emailUser" class="input-email-content-page" placeholder="Email:" required>
-                            <input type="password" id="senhaUser" class="input-senha-content-page" placeholder="Senha:"
-                            required>
-                            
-                            <p class="txt-esqueceuSenha-content-page">Esqueceu sua senha? <button onclick = "abrirSobreTelaEmail()">Clique aqui!</button></p>
+                <form action="" class="form-login-content-page">
+                    <input type="email" id="emailUser" class="input-email-content-page" placeholder="Email:" required>
+                    <input type="password" id="senhaUser" class="input-senha-content-page" placeholder="Senha:"
+                        required>
 
-                            
-                            <input type="submit" class="btn-login-content-page" value="Fazer Login">
-                            
-                            <p class="txt-cadastrase-content-page">Não possui login? <a href="cadastroSeguranca.html">Cadastra-se</a></p>
-                            <div id="resultadoLogin"></div>
-                        </form>
+                    <p class="txt-esqueceuSenha-content-page">Esqueceu sua senha? <button type="button"
+                            class="btnCliqueAqui">Clique aqui!</button></p>
+                    <input type="submit" class="btn-login-content-page" value="Fazer Login">
+
+                    <p class="txt-cadastrase-content-page">Não possui login? <a
+                            href="cadastroSeguranca.html">Cadastra-se</a></p>
+                    <div id="resultadoLogin"></div>
+                </form>
+
+                <div class="campoSobreTelaEmail">
+                    <button id="btnFecharSobreTelaEmail" class="btnFecharSobreTelaEmail" aria-label="Fechar menu"
+                        type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                    <p class="titleSobreTelaEmail">Alteração de senha</p>
+
+                    
+                    <form action="">
+                        <p class="digiteEmailSobreTelaEmail">Digite seu email:</p>
+                        <input type="email" class="inputSobreTelaEmail" id="emailSobreTelaEmail" required>
+                        <button class="enviarCodigoSobreTelaEmail">Enviar código</button>
+                    </form>
+                </div>
+
 
             </div>
 
@@ -118,6 +138,7 @@
     -->
     <script src="../renderer/scriptMenuConfig.js"></script>
     <script src="../renderer/inicio.js"></script>
+    <script src="../renderer/scriptSobreTelasInicio.js"></script>
 </body>
 
 </html>

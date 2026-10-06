@@ -122,7 +122,8 @@ body {
 
 .input-email-content-page:focus,
 .input-senha-content-page:focus {
-    outline: 1px solid #222222;
+    border: .5px solid #DE7820;
+    outline: none;
 }
 
 .txt-esqueceuSenha-content-page {
@@ -166,6 +167,7 @@ body {
     color: #222222;
     text-decoration: none;
 }
+
 .campoConfig {
     display: none;
     position: absolute;
@@ -176,36 +178,54 @@ body {
     margin-left: 10px;
     margin-top: 10px;
     border-radius: 8px;
-    transition: .5s ease-in-out; 
+    transition: .5s ease-in-out;
 }
-.campoConfig ul{
+
+.campoConfig ul {
     list-style: none;
 }
-.itemTextConfig, .textModoIluminacao, .textAcessibilidade{
+
+.itemTextConfig,
+.textModoIluminacao,
+.textAcessibilidade {
     color: #000000;
 
 }
-.itemTextConfig, .textModoIluminacao{
+
+.itemTextConfig,
+.textModoIluminacao {
     margin-bottom: 10px;
 }
-.textAcessibilidade{
+
+.textAcessibilidade {
     margin-top: 10px;
 }
-.itemModoIluminacao, .itemConfig1, .itemConfig2, .itemConfig3, .itemConfig4 {
+
+.itemModoIluminacao,
+.itemConfig1,
+.itemConfig2,
+.itemConfig3,
+.itemConfig4 {
     background-color: #DE7820;
     color: #FFFFFF;
 }
-.itemConfig1, .itemConfig2, .itemConfig3, .itemConfig4{
+
+.itemConfig1,
+.itemConfig2,
+.itemConfig3,
+.itemConfig4 {
     height: 30px;
     margin-top: 10px;
     border-radius: 5px;
     align-content: center;
     padding-left: 5px;
 }
+
 .ativo {
     display: block;
-    transition: .5s ease-in-out;    
+    transition: .5s ease-in-out;
 }
+
 .btnFecharMenu {
     position: absolute;
     top: 5px;
@@ -220,9 +240,11 @@ body {
     cursor: pointer;
     color: #222222;
 }
+
 .itemModoIluminacao {
     border-radius: 5px;
 }
+
 .itemModoIluminacao select {
     width: 100%;
     height: 30px;
@@ -234,16 +256,91 @@ body {
     cursor: pointer;
     border: 1px solid #DE7820;
 }
+
 .itemModoIluminacao select:focus {
     outline: none;
 }
+
 .btnFecharMenu:hover {
     color: #DE7820;
 }
+
 #resultadoLogin {
     position: absolute;
     margin-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #030303;
+}
+
+.campoSobreTelaEmail {
+    position: fixed;
+    display: none;
+    background-color: #d6d6d6;
+    width: 300px;
+    height: fit-content;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-items: center;
+    padding: 8px 0 10px 0;
+
+     /* Centralização */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.campoSobreTelaEmail input {
+    width: 200px;
+    height: 26px;
+    border: 1px solid #222222;
+    border-radius: 6px;
+}
+
+.enviarCodigoSobreTelaEmail {
+    background-color: #DE7820;
+    border: none;
+    height: 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #F7FAFF;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.campoSobreTelaEmail input:focus {
+    border: .5px solid #DE7820;
+    outline: none;
+}
+
+.titleSobreTelaEmail {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.campoSobreTelaEmail form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ativoCampoSobreTelaEmail {
+    display: flex;
+
+}
+
+.btnFecharSobreTelaEmail {
+    position: relative;
+    top: 0;
+    right: 5px;
+    float: right;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #222222;
+}
+.btnFecharSobreTelaEmail:hover{
+    color: #DE7820;
 }
