@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aluno</title>
+
+    <link rel="stylesheet" href="../css/cadastroAluno.css">
+</head>
+
+<body>
+
+    <a href="gestor.html">
+        <img src="../images/logos/logo_fundo_azul.png" alt="Logo" class="logo-header">
+    </a>
+
+    <button class="settings-main" aria-label="Configurações" id="btnConfig">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E1E1E1"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-settings-icon lucide-settings">
+            <path
+                d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+            <circle cx="12" cy="12" r="3" />
+        </svg>
+
+    </button>
+
+    <div class="campoConfig">
+
+        <button id="btnFecharMenu" class="btnFecharMenu" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <ul class="itensConfig">
+            <li class="itemTextConfig">Configurações</li>
+            <li class="itemTextModoIluminacao">
+                <p class="textModoIluminacao">Modo de Iluminação</p>
+            </li>
+            <li class="itemModoIluminacao">
+                <select name="" id="">
+                    <option value="claro">Claro</option>
+                    <option value="escuro">Escuro</option>
+                </select>
+            </li>
+            <li class="itemTextAcessibilidaDe">
+                <p class="textAcessibilidade">Acessibilidadade</p>
+            </li>
+            <li class="itemConfig1">Config1</li>
+            <li class="itemConfig2">Config2</li>
+            <li class="itemConfig3">Config3</li>
+            <li class="itemConfig4">Config4</li>
+        </ul>
+    </div>
+
+
+    <main class="principalCadastro">
+        <h1>Cadastro de Aluno</h1>
+
+        <form id="formCadastro">
+            <div class="campo">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite o nome do aluno" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">Email institucional:</label>
+                <input type="email" id="email" name="email" placeholder="Digite o email do aluno" required>
+            </div>
+
+            <div class="campo">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="Digite o CPF do aluno" required>
+            </div>
+
+            <div class="campo">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="tel" name="telefone" placeholder="Digite o telefone do aluno" required>
+            </div>
+
+            <div class="campo">
+                <label for="rm">RM:</label>
+                <input type="text" id="rm" name="rm" placeholder="Digite o RM do aluno" required>
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite a senha do aluno" required>
+            </div>
+
+            <button type="submit" class="btnCadastro">Cadastrar Aluno</button>
+        </form>
+
+    </main>
+    <script src="../renderer/cadastroAluno.js"></script>
+    <script src="../renderer/scriptMenuConfig.js"></script>
+
+</body>
+
+</html>

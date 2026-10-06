@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/gestor.css">
+    <title>Tela do gestor</title>
+</head>
+
+<body>
+    <!--Configuração e logo-->
+    <a href="inicio.html">
+        <img src="../images/logos/logo_fundo_azul.png" alt="Logo" class="logo-header">
+    </a>
+    <!--
+        Botao de configuracoes da pagina
+    -->
+    <button class="settings-main" aria-label="Configurações" id="btnConfig">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E1E1E1"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-settings-icon lucide-settings">
+            <path
+                d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+            <circle cx="12" cy="12" r="3" />
+        </svg>
+
+    </button>
+
+    <div class="campoConfig">
+
+        <button id="btnFecharMenu" class="btnFecharMenu" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <ul class="itensConfig">
+            <li class="itemTextConfig">Configurações</li>
+            <li class="itemTextModoIluminacao">
+                <p class="textModoIluminacao">Modo de Iluminação</p>
+            </li>
+            <li class="itemModoIluminacao">
+                <select name="" id="">
+                    <option value="claro">Claro</option>
+                    <option value="escuro">Escuro</option>
+                </select>
+            </li>
+            <li class="itemTextAcessibilidaDe">
+                <p class="textAcessibilidade">Acessibilidadade</p>
+            </li>
+            <li class="itemConfig1">Config1</li>
+            <li class="itemConfig2">Config2</li>
+            <li class="itemConfig3">Config3</li>
+            <li class="itemConfig4">Config4</li>
+        </ul>
+    </div>
+
+    <!--A box_1 conterá toda o código-->
+    <div class="box_1">
+
+        <!--Botão para cadastrar aluno-->
+        <div class="button_ln">
+            <button class="ln_aluno" onclick="location.href = 'cadastroAluno.html'">Cadastrar novo aluno</button>
+        </div>
+
+        <!--Essa área conterá toda a turma, ainda representativo, sem subtelas-->
+        <div class="box_turma">
+
+            <div class="turma" name="1ds">
+                <div class="img">
+                    <img src="../images/imageCapelaPreta.png" alt="">
+                    <h2>1DS</h2>
+                </div>
+            </div>
+
+            <div class="turma" name="2ds">
+                <div class="img">
+                    <img src="../images/imageCapelaPreta.png" alt="">
+                    <H2>2DS</H2>
+                </div>
+            </div>
+
+            <div class="turma" name="3ds">
+                <div class="img">
+                    <img src="../images/imageCapelaPreta.png" alt="">
+                    <h2>3DS</h2>
+                </div>
+            </div>
+
+            <div class="turma" name="1adm">
+                <div class="img">
+                    <img src="../images/imageCapelaPreta.png" alt="">
+                    <H2>1ADM</H2>
+                </div>
+            </div>
+
+            <div class="turma" name="2adm">
+                <div class="img">
+                    <img src="../images/imageCapelaPreta.png" alt="">
+                    <H2>2ADM</H2>
+                </div>
+            </div>
+
+            <div class="turma" name="3adm">
+                <div class="img">
+                    <img src="../images/imageCapelaPreta.png" alt="">
+                    <H2>3ADM</H2>
+                </div>
+            </div>
+
+            <div class="turma" name="1nutri">
+                <div class="img">
+                    <img src="../images/imageCapelaPreta.png" alt="">
+                    <H2>1NUTRI</H2>
+                </div>
+            </div>
+
+            <div class="turma" name="2nutri">
+                <div class="img">
+                    <img src="../images/imageCapelaPreta.png" alt="">
+                    <H2>2NUTRI</H2>
+                </div>
+            </div>
+
+            <div class="turma" name="3nutri">
+                <div class="img">
+                    <img src="../images/imageCapelaPreta.png" alt="">
+                    <H2>3NUTRI</H2>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Área para o relatorio diário dos alunos, ainda representativo, sem conexão ao banco de dados-->
+        <div class="box_lista_de_alunos">
+            <h2 style="font-size: 18px;">Relátorio diário</h2>
+            <hr>
+
+            <div class="aluno">
+                <div class="texto_certo">
+                    <p><b>Nome</b>: Lucas Camilo de Sousa</p>
+                    <p><b>Curso:</b> 3DS</p>
+                    <p><b>Atraso:</b> Sim</p>
+                    <p><b>Mátricula:</b> Ativa</p>
+                </div>
+                <button class="aluno_exibir">Exibir</button>
+            </div>
+
+            <div class="aluno">
+                <div class="texto_certo">
+                    <p><b>Nome</b>: Maria Clara Alves Oliveira</p>
+                    <p><b>Curso:</b> 3DS</p>
+                    <p><b>Atraso:</b> Sim</p>
+                    <p><b>Mátricula:</b> Ativa</p>
+                </div>
+                <button class="aluno_exibir">Exibir</button>
+            </div>
+
+            <div class="aluno">
+                <div class="texto_certo">
+                    <p><b>Nome</b>: Cesar Oliveira</p>
+                    <p><b>Curso:</b> 3DS</p>
+                    <p><b>Atraso:</b> Sim</p>
+                    <p><b>Mátricula:</b> Não ativa</p>
+                </div>
+                <button class="aluno_exibir">Exibir</button>
+            </div>
+
+            <div class="aluno">
+                <div class="texto_certo">
+                    <p><b>Nome</b>: Gustavo Santos</p>
+                    <p><b>Curso:</b> 3DS</p>
+                    <p><b>Atraso:</b> Não</p>
+                    <p><b>Mátricula:</b> Ativa</p>
+                </div>
+                <button class="aluno_exibir">Exibir</button>
+            </div>
+
+
+
+            <p><b>Alunos na escola:</b> 157 alunos</p>
+        </div>
+    </div>
+    <script src="../renderer/scriptMenuConfig.js"></script>
+</body>
+
+</html>

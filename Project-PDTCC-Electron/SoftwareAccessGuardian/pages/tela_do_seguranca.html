@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/estilo_tela_seguranca.css">
+
+    <title>Access Guardian</title>
+
+</head>
+
+<body>
+
+    <a href="inicio.html">
+        <img src="../images/logos/logo_fundo_azul.png" alt="Logo" class="logo-header">
+    </a>
+    <!--
+        Botao de configuracoes da pagina
+    -->
+    <button class="settings-main" aria-label="Configurações" id="btnConfig">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E1E1E1"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-settings-icon lucide-settings">
+            <path
+                d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+            <circle cx="12" cy="12" r="3" />
+        </svg>
+
+    </button>
+
+    <div class="campoConfig">
+
+        <button id="btnFecharMenu" class="btnFecharMenu" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <ul class="itensConfig">
+            <li class="itemTextConfig">Configurações</li>
+            <li class="itemTextModoIluminacao">
+                <p class="textModoIluminacao">Modo de Iluminação</p>
+            </li>
+            <li class="itemModoIluminacao">
+                <select name="" id="">
+                    <option value="claro">Claro</option>
+                    <option value="escuro">Escuro</option>
+                </select>
+            </li>
+            <li class="itemTextAcessibilidaDe">
+                <p class="textAcessibilidade">Acessibilidadade</p>
+            </li>
+            <li class="itemConfig1">Config1</li>
+            <li class="itemConfig2">Config2</li>
+            <li class="itemConfig3">Config3</li>
+            <li class="itemConfig4">Config4</li>
+        </ul>
+    </div>
+
+
+    <div class="box_1">
+
+
+        <!-- INFORMAÇÕES DO ALUNO -->
+
+        <div class="box_aluno">
+
+            <div class="img">
+
+                <img src="../images/1077063.png" alt="Aluno">
+
+            </div>
+
+
+            <div class="infromacoes_aluno">
+
+                <p>
+                    <strong>Nome:</strong>
+                    <span id="nomeAluno">
+                        Aguardando cartão...
+                    </span>
+                </p>
+
+                <p>
+                    <strong>UID:</strong>
+                    <span id="uidCartao">
+                        -
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+
+                    <span id="statusAcesso" class="status aguardando">
+                        AGUARDANDO CARTÃO
+                    </span>
+
+                </p>
+
+                <p>
+                    <strong>Catraca:</strong>
+
+                    <span id="statusCatraca" class="status aguardando">
+                        FECHADA
+                    </span>
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÕES -->
+
+        <div class="button_ln">
+
+            <button class="ln_aluno" id="btnLiberar" disabled>
+                Liberar acesso
+            </button>
+
+            <button class="ln_aluno" id="btnNegar" disabled>
+                Negar acesso
+            </button>
+
+        </div>
+
+
+        <!-- PAINEL DE STATUS -->
+
+        <div class="box_lista_de_alunos">
+
+            <div class="painel_status">
+
+                <h2>
+                    Leitor do cartão
+                </h2>
+
+                <p id="mensagemLeitor">
+                    Aproxime o cartão do leitor
+                </p>
+
+            </div>
+
+
+            <div class="registro">
+
+                <h2>
+                    Último acesso
+                </h2>
+
+                <p>
+                    <strong>Aluno:</strong>
+
+                    <span id="ultimoAluno">
+                        -
+                    </span>
+                </p>
+
+                <p>
+                    <strong>UID:</strong>
+
+                    <span id="ultimoUID">
+                        -
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Resultado:</strong>
+
+                    <span id="ultimoResultado">
+                        -
+                    </span>
+                </p>
+
+            </div>
+
+
+            <div class="estado_catraca">
+
+                <h2>
+                    Estado da catraca
+                </h2>
+
+                <div id="catracaVisual" class="catraca-fechada">
+                    FECHADA
+                </div>
+
+            </div>
+
+
+            <div class="conexao">
+
+                <h2>
+                    Leitor do cartão
+                </h2>
+
+                <span id="statusArduino">
+                    Conectando...
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // =============================================
+        // ELEMENTOS DA TELA
+        // =============================================
+
+        const nomeAluno = document.getElementById('nomeAluno');
+
+        const uidCartao = document.getElementById('uidCartao');
+
+        const statusAcesso = document.getElementById('statusAcesso');
+
+        const statusCatraca = document.getElementById('statusCatraca');
+
+        const mensagemLeitor = document.getElementById('mensagemLeitor');
+
+        const ultimoAluno = document.getElementById('ultimoAluno');
+
+        const ultimoUID = document.getElementById('ultimoUID');
+
+        const ultimoResultado = document.getElementById('ultimoResultado');
+
+        const catracaVisual = document.getElementById('catracaVisual');
+
+        const statusArduino = document.getElementById('statusArduino');
+
+
+        // =============================================
+        // FUNÇÃO PARA ATUALIZAR A CATRACA
+        // =============================================
+
+        function atualizarCatraca(status) {
+
+            console.log(
+                'Atualizando catraca:',
+                status
+            );
+
+
+            // -----------------------------------------
+            // STATUS DA CATRACA
+            // -----------------------------------------
+
+            if (statusCatraca) {
+
+                statusCatraca.textContent = status;
+            }
+
+
+            // -----------------------------------------
+            // REPRESENTAÇÃO VISUAL DA CATRACA
+            // -----------------------------------------
+
+            if (catracaVisual) {
+
+                catracaVisual.textContent = status;
+
+
+                // Remove classes anteriores
+
+                catracaVisual.classList.remove(
+                    'catraca-aberta',
+                    'catraca-fechada'
+                );
+
+
+                // -----------------------------
+                // CATRACA ABERTA
+                // -----------------------------
+
+                if (status === 'ABERTA') {
+
+                    catracaVisual.classList.add(
+                        'catraca-aberta'
+                    );
+                }
+
+
+                // -----------------------------
+                // CATRACA FECHADA
+                // -----------------------------
+
+                if (status === 'FECHADA') {
+
+                    catracaVisual.classList.add(
+                        'catraca-fechada'
+                    );
+                }
+            }
+
+
+            // -----------------------------------------
+            // CLASSE DO STATUS
+            // -----------------------------------------
+
+            if (statusCatraca) {
+
+                statusCatraca.classList.remove(
+                    'autorizado',
+                    'aguardando',
+                    'negado'
+                );
+
+
+                if (status === 'ABERTA') {
+
+                    statusCatraca.classList.add(
+                        'autorizado'
+                    );
+                }
+
+
+                if (status === 'FECHADA') {
+
+                    statusCatraca.classList.add(
+                        'aguardando'
+                    );
+                }
+            }
+        }
+
+
+        // =============================================
+        // ATUALIZAR INFORMAÇÕES DO ALUNO
+        // =============================================
+
+        function atualizarAluno(dados) {
+
+
+            // -----------------------------------------
+            // NOME
+            // -----------------------------------------
+
+            if (nomeAluno && dados.nome) {
+
+                nomeAluno.textContent = dados.nome;
+            }
+
+
+            // -----------------------------------------
+            // UID
+            // -----------------------------------------
+
+            if (uidCartao && dados.uid) {
+
+                uidCartao.textContent = dados.uid;
+            }
+
+
+            // -----------------------------------------
+            // STATUS DO ACESSO
+            // -----------------------------------------
+
+            if (statusAcesso && dados.status) {
+
+                statusAcesso.textContent = dados.status;
+            }
+
+
+            // -----------------------------------------
+            // ÚLTIMO ALUNO
+            // -----------------------------------------
+
+            if (
+                ultimoAluno &&
+                dados.nome
+            ) {
+
+                ultimoAluno.textContent =
+                    dados.nome;
+            }
+
+
+            // -----------------------------------------
+            // ÚLTIMO UID
+            // -----------------------------------------
+
+            if (
+                ultimoUID &&
+                dados.uid
+            ) {
+
+                ultimoUID.textContent =
+                    dados.uid;
+            }
+
+
+            // -----------------------------------------
+            // ÚLTIMO RESULTADO
+            // -----------------------------------------
+
+            if (
+                ultimoResultado &&
+                dados.status
+            ) {
+
+                ultimoResultado.textContent =
+                    dados.status;
+            }
+        }
+
+
+        // =============================================
+        // RECEBER DADOS DO ELECTRON
+        // =============================================
+
+        window.accessGuardian.onAcesso(
+            (dados) => {
+
+                console.log(
+                    'Dados recebidos do Electron:',
+                    dados
+                );
+
+
+                // =====================================
+                // ARDUINO CONECTADO
+                // =====================================
+
+                if (dados.tipo === 'conexao') {
+
+                    if (statusArduino) {
+
+                        statusArduino.textContent =
+                            dados.status;
+                    }
+
+                    return;
+                }
+
+
+                // =====================================
+                // ERRO
+                // =====================================
+
+                if (dados.tipo === 'erro') {
+
+                    if (statusAcesso) {
+
+                        statusAcesso.textContent =
+                            dados.status;
+                    }
+
+
+                    if (
+                        dados.nome &&
+                        nomeAluno
+                    ) {
+
+                        nomeAluno.textContent =
+                            dados.nome;
+                    }
+
+
+                    if (dados.uid && uidCartao) {
+
+                        uidCartao.textContent =
+                            dados.uid;
+                    }
+
+
+                    if (dados.catraca) {
+
+                        atualizarCatraca(
+                            dados.catraca
+                        );
+                    }
+
+                    return;
+                }
+
+
+                // =====================================
+                // CONSULTANDO ALUNO
+                // =====================================
+
+                if (dados.tipo === 'consultando') {
+
+                    atualizarAluno(dados);
+
+
+                    if (mensagemLeitor) {
+
+                        mensagemLeitor.textContent =
+                            'Consultando cartão...';
+                    }
+
+
+                    if (statusAcesso) {
+
+                        statusAcesso.textContent =
+                            'CONSULTANDO';
+                    }
+
+
+                    if (dados.catraca) {
+
+                        atualizarCatraca(
+                            dados.catraca
+                        );
+                    }
+
+                    return;
+                }
+
+
+                // =====================================
+                // ACESSO AUTORIZADO
+                // =====================================
+
+                if (dados.tipo === 'autorizado') {
+
+                    atualizarAluno(dados);
+
+
+                    if (mensagemLeitor) {
+
+                        mensagemLeitor.textContent =
+                            'Acesso autorizado. Aguarde a abertura da catraca.';
+                    }
+
+
+                    if (statusAcesso) {
+
+                        statusAcesso.textContent =
+                            'ACESSO AUTORIZADO';
+                    }
+
+
+                    // Neste momento ainda está fechada.
+                    // O Arduino vai confirmar quando abrir.
+
+                    if (dados.catraca) {
+
+                        atualizarCatraca(
+                            dados.catraca
+                        );
+                    }
+
+                    return;
+                }
+
+
+                // =====================================
+                // ACESSO NEGADO
+                // =====================================
+
+                if (dados.tipo === 'negado') {
+
+                    atualizarAluno(dados);
+
+
+                    if (mensagemLeitor) {
+
+                        mensagemLeitor.textContent =
+                            'Acesso negado.';
+                    }
+
+
+                    if (statusAcesso) {
+
+                        statusAcesso.textContent =
+                            'ACESSO NEGADO';
+                    }
+
+
+                    if (dados.catraca) {
+
+                        atualizarCatraca(
+                            dados.catraca
+                        );
+                    }
+
+                    return;
+                }
+
+
+                // =====================================
+                // STATUS DO ACESSO
+                // =====================================
+
+                if (dados.tipo === 'status') {
+
+                    if (statusAcesso) {
+
+                        statusAcesso.textContent =
+                            dados.status;
+                    }
+
+
+                    if (dados.catraca) {
+
+                        atualizarCatraca(
+                            dados.catraca
+                        );
+                    }
+
+                    return;
+                }
+
+
+                // =====================================
+                // CATRACA
+                // =====================================
+
+                if (dados.tipo === 'catraca') {
+
+                    atualizarCatraca(
+                        dados.catraca
+                    );
+
+
+                    // -----------------------------
+                    // CATRACA ABERTA
+                    // -----------------------------
+
+                    if (
+                        dados.catraca === 'ABERTA'
+                    ) {
+
+                        if (mensagemLeitor) {
+
+                            mensagemLeitor.textContent =
+                                'Catraca aberta. Aluno autorizado.';
+                        }
+
+                        console.log(
+                            'Tela: CATRACA ABERTA'
+                        );
+                    }
+
+
+                    // -----------------------------
+                    // CATRACA FECHADA
+                    // -----------------------------
+
+                    if (
+                        dados.catraca === 'FECHADA'
+                    ) {
+
+                        if (mensagemLeitor) {
+
+                            mensagemLeitor.textContent =
+                                'Catraca fechada. Pronta para o próximo aluno.';
+                        }
+
+                        console.log(
+                            'Tela: CATRACA FECHADA'
+                        );
+                    }
+
+                    return;
+                }
+
+            }
+        );
+
+        let btnConfig = document.getElementById("btnConfig");
+        let campoConfig = document.querySelector(".campoConfig");
+        let btnFecharMenu = document.querySelector('#btnFecharMenu');
+        btnConfig.addEventListener("click", function () {
+            campoConfig.classList.add('ativo');
+            btnConfig.style.display = 'none';
+        });
+        btnFecharMenu.addEventListener('click', () => {
+            campoConfig.classList.remove('ativo');
+            btnConfig.style.display = 'block';
+        });
+
+    </script>
+
+</body>
+
+</html>

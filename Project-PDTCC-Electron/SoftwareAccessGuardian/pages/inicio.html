@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+    <!--
+        O main da pagina main-content. Abriga todo o conteudo principal incluindo a parte de configuracao
+    -->
+    <main class="main-content">
+        <a href="inicio.html">
+            <img src="../images/logos/logo_fundo_azul.png" alt="Logo" class="logo-header">
+        </a>
+        <!--
+            Botao de configuracoes da pagina
+        -->
+        <button class="settings-main" aria-label="Configurações" id="btnConfig">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+                stroke="#E1E1E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-settings-icon lucide-settings">
+                <path
+                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                <circle cx="12" cy="12" r="3" />
+            </svg>
+
+        </button>
+
+        <div class="campoConfig">
+
+            <button id="btnFecharMenu" class="btnFecharMenu" aria-label="Fechar menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <ul class="itensConfig">
+                <li class="itemTextConfig">Configurações</li>
+                <li class="itemTextModoIluminacao">
+                    <p class="textModoIluminacao">Modo de Iluminação</p>
+                </li>
+                <li class="itemModoIluminacao">
+                    <select name="" id="">
+                        <option value="claro">Claro</option>
+                        <option value="escuro">Escuro</option>
+                    </select>
+                </li>
+                <li class="itemTextAcessibilidaDe">
+                    <p class="textAcessibilidade">Acessibilidadade</p>
+                </li>
+                <li class="itemConfig1">Config1</li>
+                <li class="itemConfig2">Config2</li>
+                <li class="itemConfig3">Config3</li>
+                <li class="itemConfig4">Config4</li>
+            </ul>
+        </div>
+
+        <!--
+            Este campo content-page abriga todo o conteudo principal exceto a parte de configuracao
+        -->
+        <section class="content-page">
+
+            <!--
+                Este bloco1 é o campo que contem a introducao do site. 
+            -->
+            <div class="bloco1-content-page">
+                <img src="../images/logos/logo_fundo_branco.png" alt="Logo" class="logo-content-page">
+
+                <p class="txt-bemVindo-content-page">Bem-vindo (a) ao Access Guardian</p>
+
+                <p class="txt-introdutivo-content-page">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <!--
+                Este é o bloco2 que contem toda a informacao de login do usuario
+                -->
+                <div class="bloco2-content-page">
+                    
+                    <p class="title-login-content-page">Login</p>
+                    
+                    <!--
+                        Este é o formulario que abriga os inputs e dereciona o usuario para as proximas etapas
+                        -->
+                        <form action="" class="form-login-content-page">
+                            <input type="email" id="emailUser" class="input-email-content-page" placeholder="Email:" required>
+                            <input type="password" id="senhaUser" class="input-senha-content-page" placeholder="Senha:"
+                            required>
+                            
+                            <p class="txt-esqueceuSenha-content-page">Esqueceu sua senha? <button onclick = "abrirSobreTelaEmail()">Clique aqui!</button></p>
+
+                            
+                            <input type="submit" class="btn-login-content-page" value="Fazer Login">
+                            
+                            <p class="txt-cadastrase-content-page">Não possui login? <a href="cadastroSeguranca.html">Cadastra-se</a></p>
+                            <div id="resultadoLogin"></div>
+                        </form>
+
+            </div>
+
+        </section>
+    </main>
+    <!--
+        Aqui é onde acaba todo o conteudo principal, main-content e content-page
+    -->
+    <script src="../renderer/scriptMenuConfig.js"></script>
+    <script src="../renderer/inicio.js"></script>
+</body>
+
+</html>
