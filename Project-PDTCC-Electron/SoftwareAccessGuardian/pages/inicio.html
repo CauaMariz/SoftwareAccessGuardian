@@ -118,17 +118,55 @@
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
                     </button>
-                    <p class="titleSobreTelaEmail">Alteração de senha</p>
+                    <p class="titleSobreTela">Alteração de senha</p>
 
-                    
+
                     <form action="">
                         <p class="digiteEmailSobreTelaEmail">Digite seu email:</p>
                         <input type="email" class="inputSobreTelaEmail" id="emailSobreTelaEmail" required>
-                        <button class="enviarCodigoSobreTelaEmail">Enviar código</button>
+                        <button class="enviarCodigoSobreTelaEmail" type="button">Enviar código</button>
                     </form>
                 </div>
 
+                <div class="campoSobreTelaCodigo">
+                    <button id="btnFecharSobreTelaCodigo" class="btnFecharSobreTelaCodigo" aria-label="Fechar menu"
+                        type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                    <p class="titleSobreTela">Alteração de senha</p>
 
+
+                    <form action="">
+                        <p class="digiteCodigoSobreTelaCodigo">Digite o código enviado no seu email:</p>
+                        <input type="text" inputmode="numeric" minlength="6" maxlength="6" class="inputSobreTelaCodigo" id="codigoSobreTelaCodigo" required>
+                        <p class="txtNaoRecebeuSobreTelaCodigo">Não recebeu? Reenviar em 30 segundos</p>
+                        <button class="btnConfirmarSobreTelaCodigo" type="button">Confirmar</button>
+                    </form>
+                </div>
+
+                <div class="campoSobreTelaSenha">
+                    <button id="btnFecharSobreTelaSenha" class="btnFecharSobreTelaSenha" aria-label="Fechar menu"
+                        type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                    <p class="titleSobreTela">Alteração de senha</p>
+
+
+                    <form action="">
+                        <p class="digiteSenhaSobreTelaSenha">Nova senha:</p>
+                        <input type="password" class="inputSobreTelaSenha" id="senhaSobreTelaSenha" required>
+                        <input type="password" class="inputSobreTelaSenha" id="confirmaSenhaSobreTelaSenha" required>
+                        <button class="btnVoltarLoginSobreTelaCodigo">Voltar para login</button>
+                    </form>
+                </div>
             </div>
 
         </section>

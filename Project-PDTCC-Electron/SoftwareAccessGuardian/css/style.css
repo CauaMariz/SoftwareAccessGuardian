@@ -284,7 +284,7 @@ body {
     justify-items: center;
     padding: 8px 0 10px 0;
 
-     /* Centralização */
+    /* Centralização */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -295,6 +295,7 @@ body {
     height: 26px;
     border: 1px solid #222222;
     border-radius: 6px;
+    padding-left: 5px;
 }
 
 .enviarCodigoSobreTelaEmail {
@@ -314,7 +315,7 @@ body {
     outline: none;
 }
 
-.titleSobreTelaEmail {
+.titleSobreTela {
     font-size: 20px;
     padding-bottom: 10px;
 }
@@ -341,6 +342,168 @@ body {
     cursor: pointer;
     color: #222222;
 }
-.btnFecharSobreTelaEmail:hover{
+
+.btnFecharSobreTelaEmail:hover {
+    color: #DE7820;
+}
+
+.btnCliqueAqui {
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+/**/
+
+
+.campoSobreTelaCodigo {
+    position: fixed;
+    display: none;
+    background-color: #d6d6d6;
+    width: 300px;
+    height: fit-content;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-items: center;
+    padding: 8px 0 10px 0;
+
+    /* Centralização */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.campoSobreTelaCodigo input {
+    width: 200px;
+    height: 26px;
+    border: 1px solid #222222;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.btnConfirmarSobreTelaCodigo {
+    background-color: #DE7820;
+    border: none;
+    height: 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #F7FAFF;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.campoSobreTelaCodigo input:focus {
+    border: .5px solid #DE7820;
+    outline: none;
+}
+
+.titleSobreTela {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.campoSobreTelaCodigo form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ativoCampoSobreTelaCodigo {
+    display: flex;
+
+}
+
+.btnFecharSobreTelaCodigo {
+    position: relative;
+    top: 0;
+    right: 5px;
+    float: right;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #222222;
+}
+
+.btnFecharSobreTelaCodigo:hover {
+    color: #DE7820;
+}
+
+/**/
+
+
+.campoSobreTelaSenha {
+    position: fixed;
+    display: none;
+    background-color: #d6d6d6;
+    width: 300px;
+    height: fit-content;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-items: center;
+    padding: 8px 0 10px 0;
+
+    /* Centralização */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.campoSobreTelaSenha input {
+    width: 200px;
+    height: 26px;
+    border: 1px solid #222222;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.btnVoltarLoginSobreTelaCodigo {
+    background-color: #DE7820;
+    border: none;
+    height: 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #F7FAFF;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.campoSobreTelaSenha input:focus {
+    border: .5px solid #DE7820;
+    outline: none;
+}
+
+.titleSobreTela {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.campoSobreTelaSenha form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ativoCampoSobreTelaSenha {
+    display: flex;
+}
+
+.btnFecharSobreTelaSenha {
+    position: relative;
+    top: 0;
+    right: 5px;
+    float: right;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #222222;
+}
+
+.btnFecharSobreTelaSenha:hover {
     color: #DE7820;
 }
