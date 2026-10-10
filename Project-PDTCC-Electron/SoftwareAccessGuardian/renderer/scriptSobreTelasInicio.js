@@ -10,10 +10,21 @@ btnCliqueAqui.addEventListener("click", () => {
     campoEmail.style.display = "block";
 })
 
+const funcao = document.getElementById("funcao");
+
+let funcaoEscolhida = "";
+
+funcao.addEventListener("change", () => {
+    funcaoEscolhida = funcao.value;
+
+    console.log(funcaoEscolhida);
+});
+
 btnFecharSobreTelaEmail.addEventListener("click", () => {
     campoEmail.classList.remove("ativoCampoSobreTelaEmail");
     campoEmail.style.display = "none";
 })
+
 
 //Script sobre tela código
 

@@ -25,3 +25,31 @@ async function loginUser(email, senha){
 module.exports = {
   loginUser
 }
+
+async function verificarEmailGestorSeguranca(email, tipoUser) {
+    let sql;
+
+    if (tipoUser === 'gestor') {
+        sql = `
+            SELECT email_gestor
+            FROM gestor
+            WHERE email_gestor = ?
+            LIMIT 1
+        `;
+    }
+    else if (tipoUser === 'seguranca') {
+        sql = `
+            SELECT email_seguranca
+            FROM seguranca
+            WHERE email_seguranca = ?
+            LIMIT 1
+        `;
+    }
+    else {
+        throw new Error('Tipo de usuário inválido.');
+    }
+
+    const [result] = await pool.execute(sql, [email]);
+
+    return result.length > 0;
+}

@@ -23,6 +23,8 @@ function janelaInicio() {
         }
     });
 
+    janelaSeguranca.webContents.openDevTools({ mode: 'detach' });
+
     janelaSeguranca.loadFile(
         'pages/inicio.html'
     );

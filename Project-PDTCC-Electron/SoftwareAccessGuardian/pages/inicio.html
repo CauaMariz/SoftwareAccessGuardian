@@ -91,7 +91,6 @@
             <div class="bloco2-content-page">
 
                 <p class="title-login-content-page">Login</p>
-
                 <!--
                         Este é o formulario que abriga os inputs e dereciona o usuario para as proximas etapas
                         -->
@@ -110,6 +109,7 @@
                 </form>
 
                 <div class="campoSobreTelaEmail">
+
                     <button id="btnFecharSobreTelaEmail" class="btnFecharSobreTelaEmail" aria-label="Fechar menu"
                         type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
@@ -119,6 +119,15 @@
                         </svg>
                     </button>
                     <p class="titleSobreTela">Alteração de senha</p>
+
+                    <div class="campo select-container">
+                        <select id="funcao" required>
+                            <option value="" selected disabled>Selecione sua função:</option>
+                            <option value="seguranca">Segurança</option>
+                            <option value="gestor">Gestor</option>
+                        </select>
+                        <span class="seta"></span>
+                    </div>
 
 
                     <form action="">
@@ -142,7 +151,8 @@
 
                     <form action="">
                         <p class="digiteCodigoSobreTelaCodigo">Digite o código enviado no seu email:</p>
-                        <input type="text" inputmode="numeric" minlength="6" maxlength="6" class="inputSobreTelaCodigo" id="codigoSobreTelaCodigo" required>
+                        <input type="text" inputmode="numeric" minlength="6" maxlength="6" class="inputSobreTelaCodigo"
+                            id="codigoSobreTelaCodigo" required>
                         <p class="txtNaoRecebeuSobreTelaCodigo">Não recebeu? Reenviar em 30 segundos</p>
                         <button class="btnConfirmarSobreTelaCodigo" type="button">Confirmar</button>
                     </form>
