@@ -10,6 +10,9 @@ contextBridge.exposeInMainWorld('accessGuardian', {
         );
     },
     
+    solicitarCodigoRecuperacao: (dados) =>
+    ipcRenderer.invoke('solicitarCodigoRecuperacao', dados),
+
      loginUser: (email, senha) => {
 
         return ipcRenderer.invoke('loginUser', {

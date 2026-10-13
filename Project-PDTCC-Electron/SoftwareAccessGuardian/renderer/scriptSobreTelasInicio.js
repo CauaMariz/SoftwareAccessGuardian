@@ -1,5 +1,5 @@
 //Script sobre tela email
-const email = document.getElementById("emailSobreTelaEmail");
+const email = document.getElementById("emailSobreTelaEmail").trim();
 const campoEmail = document.querySelector(".campoSobreTelaEmail");
 const btnCliqueAqui = document.querySelector(".btnCliqueAqui");
 const btnFecharSobreTelaEmail = document.querySelector(".btnFecharSobreTelaEmail");
@@ -11,6 +11,10 @@ btnCliqueAqui.addEventListener("click", () => {
 })
 
 const funcao = document.getElementById("funcao");
+const resposta = await window.api.solicitarCodigoRecuperacao({
+    email,
+    tipoUser
+});
 
 let funcaoEscolhida = "";
 

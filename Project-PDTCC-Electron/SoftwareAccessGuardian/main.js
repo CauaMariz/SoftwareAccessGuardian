@@ -1,5 +1,5 @@
 const { ipcMain, app, BrowserWindow, nativeTheme, screen } = require('electron');
-
+const { randomInt } = require('crypto');
 const path = require('path');
 
 const { loginUser } = require('./database/loginRepository.js');
@@ -70,3 +70,25 @@ ipcMain.handle('loginUser', async (_event, dados) => {
         };
     }
 });
+
+
+const { 
+    verificarEmailGestorSeguranca, 
+    salvarCodigoRecuperacao,
+    validarCodigoRecuperacao,
+    atualizarSenhaRecuperacao } = require('./database/recuperacaoSenha');
+
+const { enviarCodigoEmail } = require('./services/emailService');
+
+ipcMain.handle('verificarEmailGestorSeguranca', async (event, { email, tipoUser }) => {
+    const situacao = await verificarEmailGestorSeguranca(email, tipoUser);
+
+    if (!situacao) {
+        return { sucesso: false, mensagem: 'Email não encontrado' };
+    }
+    const codigo = randomInt(100000, 1000000).toString();
+
+    await enviarCodigoEmail(email, codigo);
+
+    return { sucesso: true, mensagem: "Código enviado com sucesso" };
+})
