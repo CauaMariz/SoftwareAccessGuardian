@@ -1,3 +1,5 @@
+const pool = require('./connection');
+
 async function verificarEmailGestorSeguranca(email, tipoUser) {
   let sql;
 
@@ -45,7 +47,7 @@ function obterDadosUser(tipoUser) {
   throw new Error('Tipo de usuário inválido.');
 }
 
-async function insertCodigo(email, tipoUser, codigo) {
+async function salvarCodigoRecuperacao(email, tipoUser, codigo) {
   const usuario = obterDadosUser(tipoUser);
 
   const sql = `
@@ -60,45 +62,53 @@ async function insertCodigo(email, tipoUser, codigo) {
   return result.affectedRows > 0;
 }
 
-async function validarCodigo(email, tipoUser, codigo) {
+async function validarCodigoRecuperacao(email, tipoUser, codigo) {
   const usuario = obterDadosUser(tipoUser);
 
   const sql = `
-    SELECT ${usuario.colunaEmail}
-    FROM ${usuario.tabela}
-    WHERE ${usuario.colunaEmail} = ? AND codigo_recuperacao = ?
-    AND 
-    expiracao_codigo > NOW()
-    LIMIT 1
-  `;
+        SELECT ${usuario.colunaEmail}
+        FROM ${usuario.tabela}
+        WHERE ${usuario.colunaEmail} = ?
+          AND codigo_recuperacao = ?
+          AND expiracao_codigo > NOW()
+        LIMIT 1
+    `;
 
-  const [linha] = await pool.execute(sql, [email, codigo]);
-  return linha.length > 0;
+  const [linhas] = await pool.execute(sql, [email, codigo]);
+
+  return linhas.length > 0;
 }
-
-async function atualizarSenha(email, tipoUser, novaSenha) {
+async function atualizarSenhaRecuperacao(
+  email,
+  tipoUser,
+  codigo,
+  novaSenha
+) {
   const usuario = obterDadosUser(tipoUser);
 
   const sql = `
-  UPDATE ${usuario.tabela}
-  SET ${usuario.colunaSenha} = ?,
-      codigo_recuperacao = NULL,
-      expiracao_codigo = NULL
-  where ${usuario.colunaEmail} = ?,
-  AND codigo_recuperacao = ?
-  AND expiracao_codigo > NOW()
-  LIMIT 1
-  `;
+        UPDATE ${usuario.tabela}
+        SET ${usuario.colunaSenha} = ?,
+            codigo_recuperacao = NULL,
+            expiracao_codigo = NULL
+        WHERE ${usuario.colunaEmail} = ?
+          AND codigo_recuperacao = ?
+          AND expiracao_codigo > NOW()
+        LIMIT 1
+    `;
 
-  const [result] = await pool.execute(sql, [novaSenha, email, codigo]);
+  const [result] = await pool.execute(sql, [
+    novaSenha,
+    email,
+    codigo
+  ]);
 
   return result.affectedRows > 0;
 }
 
 module.exports = {
-  verificarEmailGestorSeguranca,
-  salvarCodigoRecuperacao,
-  validarCodigoRecuperacao,
-  atualizarSenhaRecuperacao
-}
-
+    verificarEmailGestorSeguranca,
+    salvarCodigoRecuperacao,
+    validarCodigoRecuperacao,
+    atualizarSenhaRecuperacao
+};
