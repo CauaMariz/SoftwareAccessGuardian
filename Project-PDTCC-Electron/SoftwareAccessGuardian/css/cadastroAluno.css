@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
     align-self: center;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
+    margin-top: 7.5%;
 }
 
 .principalCadastro h1 {

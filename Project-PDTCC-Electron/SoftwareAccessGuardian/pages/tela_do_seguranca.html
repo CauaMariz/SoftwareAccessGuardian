@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../css/estilo_tela_seguranca.css">
+    <link rel="stylesheet" href="../css/menuLateral.css">
 
     <title>Access Guardian</title>
 
@@ -15,54 +16,98 @@
 
 <body>
 
-    <a href="inicio.html">
-        <img src="../images/logos/logo_fundo_azul.png" alt="Logo" class="logo-header">
-    </a>
-    <!--
-        Botao de configuracoes da pagina
-    -->
-    <button class="settings-main" aria-label="Configurações" id="btnConfig">
+    <!-- Menu lateral recolhível -->
+    <aside class="menu-lateral" id="menuLateral" aria-label="Menu principal">
+        <div class="menu-logo">
+            <a href="inicio.html" aria-label="Access Guardian - Início">
+                <img src="../images/logos/logo_fundo_azul.png" alt="Logo Access Guardian">
+            </a>
+            <span class="menu-texto nome-sistema">Access Guardian</span>
+        </div>
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E1E1E1"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-settings-icon lucide-settings">
-            <path
-                d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
-            <circle cx="12" cy="12" r="3" />
-        </svg>
-
-    </button>
-
-    <div class="campoConfig">
-
-        <button id="btnFecharMenu" class="btnFecharMenu" aria-label="Fechar menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+        <button type="button" class="menu-toggle" id="btnAlternarMenu"
+                aria-label="Recolher menu" aria-expanded="true" title="Recolher menu">
+            <span class="seta-menu" id="setaMenu">‹</span>
         </button>
 
-        <ul class="itensConfig">
-            <li class="itemTextConfig">Configurações</li>
-            <li class="itemTextModoIluminacao">
-                <p class="textModoIluminacao">Modo de Iluminação</p>
-            </li>
-            <li class="itemModoIluminacao">
-                <select name="" id="">
-                    <option value="claro">Claro</option>
-                    <option value="escuro">Escuro</option>
-                </select>
-            </li>
-            <li class="itemTextAcessibilidaDe">
-                <p class="textAcessibilidade">Acessibilidadade</p>
-            </li>
-            <li class="itemConfig1">Config1</li>
-            <li class="itemConfig2">Config2</li>
-            <li class="itemConfig3">Config3</li>
-            <li class="itemConfig4">Config4</li>
-        </ul>
-    </div>
+        <nav class="menu-links">
+            <a href="inicio.html" class="menu-link" data-menu="inicio" title="Início">
+                <span class="menu-icone" aria-hidden="true">
+                    <img src="../images/casa branca.png" alt="" class="icone-inicio">
+                </span>
+                <span class="menu-texto">Início</span>
+            </a>
+
+            <button type="button" class="menu-link" id="btnConfigMenu" title="Configurações">
+                <span class="menu-icone" aria-hidden="true">
+                    <img src="../images/config_branco-removebg-preview.png" alt="" class="icone-config">
+                </span>
+                <span class="menu-texto">Configurações</span>
+            </button>
+
+            <button type="button" class="menu-link" id="btnSobreNos" title="Sobre nós">
+                <span class="menu-icone" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path></svg>
+                </span>
+                <span class="menu-texto">Sobre nós</span>
+            </button>
+
+            <button type="button" class="menu-link" id="btnSuporte" title="Suporte">
+                <span class="menu-icone" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M3 13v-2a9 9 0 0 1 18 0v2"></path><path d="M3 13h3v6H5a2 2 0 0 1-2-2v-4Z"></path><path d="M21 13h-3v6h1a2 2 0 0 0 2-2v-4Z"></path><path d="M18 19c-1 2-3 2-5 2"></path></svg>
+                </span>
+                <span class="menu-texto">Suporte</span>
+            </button>
+        </nav>
+    </aside>
+
+    <!-- Fundo escurecido dos painéis -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <main class="main-content">
+        <!-- Painel original de configurações, agora aberto pelo menu lateral -->
+        <div class="campoConfig" id="campoConfig" aria-hidden="true">
+            <button id="btnFecharMenu" class="btnFecharMenu" aria-label="Fechar configurações" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+
+            <ul class="itensConfig">
+                <li class="itemTextConfig">Configurações</li>
+                <li class="itemTextModoIluminacao"><p class="textModoIluminacao">Modo de iluminação</p></li>
+                <li class="itemModoIluminacao">
+                    <select name="modoIluminacao" id="modoIluminacao">
+                        <option value="claro">Claro</option>
+                        <option value="escuro">Escuro</option>
+                    </select>
+                </li>
+                <li class="itemTextAcessibilidaDe"><p class="textAcessibilidade">Acessibilidade</p></li>
+                <li class="itemConfig1">Configuração 1</li>
+                <li class="itemConfig2">Configuração 2</li>
+                <li class="itemConfig3">Configuração 3</li>
+                <li class="itemConfig4">Configuração 4</li>
+            </ul>
+        </div>
+        
+
+        <!-- Painel Sobre nós -->
+        <section class="painel-info" id="painelSobreNos" aria-hidden="true" aria-labelledby="tituloSobreNos">
+            <button type="button" class="fechar-painel-info" data-fechar-painel aria-label="Fechar Sobre nós">×</button>
+            <h2 id="tituloSobreNos">Sobre nós</h2>
+            <p>O Access Guardian é um projeto voltado ao gerenciamento e à verificação de acesso por meio de cartões RFID.</p>
+            <p>O sistema integra a interface de controle com um leitor de cartões e uma catraca, ajudando a visualizar o status de acesso.</p>
+        </section>
+
+        <!-- Painel Suporte -->
+        <section class="painel-info" id="painelSuporte" aria-hidden="true" aria-labelledby="tituloSuporte">
+            <button type="button" class="fechar-painel-info" data-fechar-painel aria-label="Fechar Suporte">×</button>
+            <h2 id="tituloSuporte">Suporte</h2>
+            <p>Precisa de ajuda para utilizar o Access Guardian?</p>
+            <p>Entre em contato com o responsável pelo projeto ou com a equipe de suporte da sua instituição.</p>
+            <p class="aviso-suporte">Configure aqui os dados reais de contato da equipe quando estiverem disponíveis.</p>
+        </section>
 
 
     <div class="box_1">
@@ -212,477 +257,8 @@
 
     </div>
 
-
-    <script>
-
-        // =============================================
-        // ELEMENTOS DA TELA
-        // =============================================
-
-        const nomeAluno = document.getElementById('nomeAluno');
-
-        const uidCartao = document.getElementById('uidCartao');
-
-        const statusAcesso = document.getElementById('statusAcesso');
-
-        const statusCatraca = document.getElementById('statusCatraca');
-
-        const mensagemLeitor = document.getElementById('mensagemLeitor');
-
-        const ultimoAluno = document.getElementById('ultimoAluno');
-
-        const ultimoUID = document.getElementById('ultimoUID');
-
-        const ultimoResultado = document.getElementById('ultimoResultado');
-
-        const catracaVisual = document.getElementById('catracaVisual');
-
-        const statusArduino = document.getElementById('statusArduino');
-
-
-        // =============================================
-        // FUNÇÃO PARA ATUALIZAR A CATRACA
-        // =============================================
-
-        function atualizarCatraca(status) {
-
-            console.log(
-                'Atualizando catraca:',
-                status
-            );
-
-
-            // -----------------------------------------
-            // STATUS DA CATRACA
-            // -----------------------------------------
-
-            if (statusCatraca) {
-
-                statusCatraca.textContent = status;
-            }
-
-
-            // -----------------------------------------
-            // REPRESENTAÇÃO VISUAL DA CATRACA
-            // -----------------------------------------
-
-            if (catracaVisual) {
-
-                catracaVisual.textContent = status;
-
-
-                // Remove classes anteriores
-
-                catracaVisual.classList.remove(
-                    'catraca-aberta',
-                    'catraca-fechada'
-                );
-
-
-                // -----------------------------
-                // CATRACA ABERTA
-                // -----------------------------
-
-                if (status === 'ABERTA') {
-
-                    catracaVisual.classList.add(
-                        'catraca-aberta'
-                    );
-                }
-
-
-                // -----------------------------
-                // CATRACA FECHADA
-                // -----------------------------
-
-                if (status === 'FECHADA') {
-
-                    catracaVisual.classList.add(
-                        'catraca-fechada'
-                    );
-                }
-            }
-
-
-            // -----------------------------------------
-            // CLASSE DO STATUS
-            // -----------------------------------------
-
-            if (statusCatraca) {
-
-                statusCatraca.classList.remove(
-                    'autorizado',
-                    'aguardando',
-                    'negado'
-                );
-
-
-                if (status === 'ABERTA') {
-
-                    statusCatraca.classList.add(
-                        'autorizado'
-                    );
-                }
-
-
-                if (status === 'FECHADA') {
-
-                    statusCatraca.classList.add(
-                        'aguardando'
-                    );
-                }
-            }
-        }
-
-
-        // =============================================
-        // ATUALIZAR INFORMAÇÕES DO ALUNO
-        // =============================================
-
-        function atualizarAluno(dados) {
-
-
-            // -----------------------------------------
-            // NOME
-            // -----------------------------------------
-
-            if (nomeAluno && dados.nome) {
-
-                nomeAluno.textContent = dados.nome;
-            }
-
-
-            // -----------------------------------------
-            // UID
-            // -----------------------------------------
-
-            if (uidCartao && dados.uid) {
-
-                uidCartao.textContent = dados.uid;
-            }
-
-
-            // -----------------------------------------
-            // STATUS DO ACESSO
-            // -----------------------------------------
-
-            if (statusAcesso && dados.status) {
-
-                statusAcesso.textContent = dados.status;
-            }
-
-
-            // -----------------------------------------
-            // ÚLTIMO ALUNO
-            // -----------------------------------------
-
-            if (
-                ultimoAluno &&
-                dados.nome
-            ) {
-
-                ultimoAluno.textContent =
-                    dados.nome;
-            }
-
-
-            // -----------------------------------------
-            // ÚLTIMO UID
-            // -----------------------------------------
-
-            if (
-                ultimoUID &&
-                dados.uid
-            ) {
-
-                ultimoUID.textContent =
-                    dados.uid;
-            }
-
-
-            // -----------------------------------------
-            // ÚLTIMO RESULTADO
-            // -----------------------------------------
-
-            if (
-                ultimoResultado &&
-                dados.status
-            ) {
-
-                ultimoResultado.textContent =
-                    dados.status;
-            }
-        }
-
-
-        // =============================================
-        // RECEBER DADOS DO ELECTRON
-        // =============================================
-
-        window.accessGuardian.onAcesso(
-            (dados) => {
-
-                console.log(
-                    'Dados recebidos do Electron:',
-                    dados
-                );
-
-
-                // =====================================
-                // ARDUINO CONECTADO
-                // =====================================
-
-                if (dados.tipo === 'conexao') {
-
-                    if (statusArduino) {
-
-                        statusArduino.textContent =
-                            dados.status;
-                    }
-
-                    return;
-                }
-
-
-                // =====================================
-                // ERRO
-                // =====================================
-
-                if (dados.tipo === 'erro') {
-
-                    if (statusAcesso) {
-
-                        statusAcesso.textContent =
-                            dados.status;
-                    }
-
-
-                    if (
-                        dados.nome &&
-                        nomeAluno
-                    ) {
-
-                        nomeAluno.textContent =
-                            dados.nome;
-                    }
-
-
-                    if (dados.uid && uidCartao) {
-
-                        uidCartao.textContent =
-                            dados.uid;
-                    }
-
-
-                    if (dados.catraca) {
-
-                        atualizarCatraca(
-                            dados.catraca
-                        );
-                    }
-
-                    return;
-                }
-
-
-                // =====================================
-                // CONSULTANDO ALUNO
-                // =====================================
-
-                if (dados.tipo === 'consultando') {
-
-                    atualizarAluno(dados);
-
-
-                    if (mensagemLeitor) {
-
-                        mensagemLeitor.textContent =
-                            'Consultando cartão...';
-                    }
-
-
-                    if (statusAcesso) {
-
-                        statusAcesso.textContent =
-                            'CONSULTANDO';
-                    }
-
-
-                    if (dados.catraca) {
-
-                        atualizarCatraca(
-                            dados.catraca
-                        );
-                    }
-
-                    return;
-                }
-
-
-                // =====================================
-                // ACESSO AUTORIZADO
-                // =====================================
-
-                if (dados.tipo === 'autorizado') {
-
-                    atualizarAluno(dados);
-
-
-                    if (mensagemLeitor) {
-
-                        mensagemLeitor.textContent =
-                            'Acesso autorizado. Aguarde a abertura da catraca.';
-                    }
-
-
-                    if (statusAcesso) {
-
-                        statusAcesso.textContent =
-                            'ACESSO AUTORIZADO';
-                    }
-
-
-                    // Neste momento ainda está fechada.
-                    // O Arduino vai confirmar quando abrir.
-
-                    if (dados.catraca) {
-
-                        atualizarCatraca(
-                            dados.catraca
-                        );
-                    }
-
-                    return;
-                }
-
-
-                // =====================================
-                // ACESSO NEGADO
-                // =====================================
-
-                if (dados.tipo === 'negado') {
-
-                    atualizarAluno(dados);
-
-
-                    if (mensagemLeitor) {
-
-                        mensagemLeitor.textContent =
-                            'Acesso negado.';
-                    }
-
-
-                    if (statusAcesso) {
-
-                        statusAcesso.textContent =
-                            'ACESSO NEGADO';
-                    }
-
-
-                    if (dados.catraca) {
-
-                        atualizarCatraca(
-                            dados.catraca
-                        );
-                    }
-
-                    return;
-                }
-
-
-                // =====================================
-                // STATUS DO ACESSO
-                // =====================================
-
-                if (dados.tipo === 'status') {
-
-                    if (statusAcesso) {
-
-                        statusAcesso.textContent =
-                            dados.status;
-                    }
-
-
-                    if (dados.catraca) {
-
-                        atualizarCatraca(
-                            dados.catraca
-                        );
-                    }
-
-                    return;
-                }
-
-
-                // =====================================
-                // CATRACA
-                // =====================================
-
-                if (dados.tipo === 'catraca') {
-
-                    atualizarCatraca(
-                        dados.catraca
-                    );
-
-
-                    // -----------------------------
-                    // CATRACA ABERTA
-                    // -----------------------------
-
-                    if (
-                        dados.catraca === 'ABERTA'
-                    ) {
-
-                        if (mensagemLeitor) {
-
-                            mensagemLeitor.textContent =
-                                'Catraca aberta. Aluno autorizado.';
-                        }
-
-                        console.log(
-                            'Tela: CATRACA ABERTA'
-                        );
-                    }
-
-
-                    // -----------------------------
-                    // CATRACA FECHADA
-                    // -----------------------------
-
-                    if (
-                        dados.catraca === 'FECHADA'
-                    ) {
-
-                        if (mensagemLeitor) {
-
-                            mensagemLeitor.textContent =
-                                'Catraca fechada. Pronta para o próximo aluno.';
-                        }
-
-                        console.log(
-                            'Tela: CATRACA FECHADA'
-                        );
-                    }
-
-                    return;
-                }
-
-            }
-        );
-
-        let btnConfig = document.getElementById("btnConfig");
-        let campoConfig = document.querySelector(".campoConfig");
-        let btnFecharMenu = document.querySelector('#btnFecharMenu');
-        btnConfig.addEventListener("click", function () {
-            campoConfig.classList.add('ativo');
-            btnConfig.style.display = 'none';
-        });
-        btnFecharMenu.addEventListener('click', () => {
-            campoConfig.classList.remove('ativo');
-            btnConfig.style.display = 'block';
-        });
-
-    </script>
+    <script src="../renderer/scripySegurança.js"></script>
+    <script src="../renderer/scripyMenuLateral.js"></script>
 
 </body>
 

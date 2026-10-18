@@ -1,11 +1,17 @@
-let btnConfig = document.getElementById("btnConfig");
-let campoConfig = document.querySelector(".campoConfig");
-let btnFecharMenu = document.querySelector('#btnFecharMenu');
-btnConfig.addEventListener("click", function () {
-  campoConfig.classList.add('ativo');
-  btnConfig.style.display = 'none';
-});
-btnFecharMenu.addEventListener('click', () => {
-    campoConfig.classList.remove('ativo');
-    btnConfig.style.display = 'block';
-});
+const btnConfig = document.getElementById("btnConfigMenu");
+const campoConfig = document.getElementById("campoConfig");
+const btnFecharMenu = document.getElementById("btnFecharMenu");
+
+if (btnConfig && campoConfig) {
+    btnConfig.addEventListener("click", () => {
+        campoConfig.classList.add("aberto");
+        campoConfig.setAttribute("aria-hidden", "false");
+    });
+}
+
+if (btnFecharMenu && campoConfig) {
+    btnFecharMenu.addEventListener("click", () => {
+        campoConfig.classList.remove("aberto");
+        campoConfig.setAttribute("aria-hidden", "true");
+    });
+}
