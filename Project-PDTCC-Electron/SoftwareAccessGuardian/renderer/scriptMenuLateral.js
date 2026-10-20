@@ -9,6 +9,8 @@
         const painelConfig = document.getElementById("campoConfig");
         const btnFecharConfig = document.getElementById("btnFecharMenu");
 
+        
+
         const btnSobre = document.getElementById("btnSobreNos");
         const btnSuporte = document.getElementById("btnSuporte");
 

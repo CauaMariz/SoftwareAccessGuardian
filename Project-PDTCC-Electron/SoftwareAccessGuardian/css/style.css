@@ -169,7 +169,7 @@ body {
     text-decoration: none;
 }
 
-.campoConfig {
+.campoConfig2 {
     display: none;
     position: absolute;
     background-color: #FFFFFF;
@@ -180,9 +180,10 @@ body {
     margin-top: 10px;
     border-radius: 8px;
     transition: .5s ease-in-out;
+    z-index: 2;
 }
 
-.campoConfig ul {
+.campoConfig2 ul {
     list-style: none;
 }
 

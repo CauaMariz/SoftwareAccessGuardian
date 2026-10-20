@@ -128,50 +128,10 @@
     box-sizing: border-box;
     transition: margin-left .28s ease, width .28s ease;
 }
+
 body.menu-recolhido .main-content {
     margin-left: 76px;
     width: calc(100% - 76px);
-}
-
-/* Mantém o painel de configurações existente e abre-o como painel lateral */
-.campoConfig {
-    position: fixed !important;
-    inset: 0 auto 0 0;
-    width: 320px;
-    max-width: calc(100vw - 24px);
-    height: 100vh;
-    box-sizing: border-box;
-    padding: 72px 22px 24px;
-    background: var(--ag-azul);
-    color: white;
-    z-index: 1400;
-    overflow-y: auto;
-    transform: translateX(-105%);
-    visibility: hidden;
-    transition: transform .28s ease, visibility .28s ease;
-    box-shadow: 4px 0 18px #0003;
-}
-.campoConfig.aberto { transform: translateX(0); visibility: visible; }
-.btnFecharMenu {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    display: grid;
-    place-items: center;
-    border: 0;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-}
-.itensConfig { list-style: none; padding: 0; margin: 0; }
-.itemTextConfig { font-size: 24px; font-weight: 700; margin-bottom: 28px; }
-.itemTextModoIluminacao, .itemTextAcessibilidaDe { margin-top: 22px; font-weight: 600; }
-.itemModoIluminacao select {
-    width: 100%; padding: 10px; border: 1px solid #ccd3df; border-radius: 6px;
-    background: white; color: #222; font: inherit;
-}
-.itemConfig1, .itemConfig2, .itemConfig3, .itemConfig4 {
-    padding: 12px 0; border-bottom: 1px solid #ffffff38;
 }
 
 /* Painéis de Sobre nós e Suporte */
