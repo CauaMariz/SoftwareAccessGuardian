@@ -41,7 +41,7 @@ body {
 
 .content-page {
     height: auto;
-    min-height: 500px;
+    min-height: 550px;
     width: auto;
     min-width: 800px;
     justify-self: center;
@@ -278,13 +278,16 @@ body {
 .campoSobreTelaEmail {
     position: fixed;
     display: none;
-    background-color: #d6d6d6;
-    width: 300px;
-    height: fit-content;
+    background-color: #F7FAFF;
+    width: 400px;
+    height: 250px;
+    border: 1px solid black;
+    min-height: auto;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
     justify-items: center;
-    padding: 8px 0 10px 0;
+    padding: 10px 0 12px 0;
+
 
     /* Centralização */
     top: 50%;
@@ -293,17 +296,18 @@ body {
 }
 
 .campoSobreTelaEmail input {
-    width: 200px;
-    height: 26px;
+    width: 350px;
+    height: 38px;
     border: 1px solid #222222;
     border-radius: 6px;
     padding-left: 5px;
+    margin-bottom: 10px;
 }
 
 .enviarCodigoSobreTelaEmail {
     background-color: #DE7820;
     border: none;
-    height: 28px;
+    height: 38px;
     cursor: pointer;
     border-radius: 5px;
     color: #F7FAFF;
@@ -320,6 +324,7 @@ body {
 .titleSobreTela {
     font-size: 20px;
     padding-bottom: 10px;
+    padding-top: 35px;
 }
 
 .campoSobreTelaEmail form {
@@ -333,9 +338,8 @@ body {
 }
 
 .btnFecharSobreTelaEmail {
-    position: relative;
-    top: 0;
-    right: 5px;
+    margin-top: 0;
+    margin-right: 7px;
     float: right;
     width: 25px;
     height: 25px;
@@ -361,13 +365,16 @@ body {
 .campoSobreTelaCodigo {
     position: fixed;
     display: none;
-    background-color: #d6d6d6;
-    width: 300px;
-    height: fit-content;
+    background-color: #F7FAFF;
+    width: 400px;
+    height: 250px;
+    border: 1px solid black;
+    min-height: auto;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
     justify-items: center;
-    padding: 8px 0 10px 0;
+    padding: 10px 0 12px 0;
+
 
     /* Centralização */
     top: 50%;
@@ -376,18 +383,18 @@ body {
 }
 
 .campoSobreTelaCodigo input {
-    width: 200px;
-    height: 26px;
+    width: 350px;
+    height: 38px;
     border: 1px solid #222222;
     border-radius: 6px;
-    margin-bottom: 10px;
     padding-left: 5px;
+    margin-bottom: 10px;
 }
 
 .btnConfirmarSobreTelaCodigo {
     background-color: #DE7820;
     border: none;
-    height: 28px;
+    height: 38px;
     cursor: pointer;
     border-radius: 5px;
     color: #F7FAFF;
@@ -417,9 +424,8 @@ body {
 }
 
 .btnFecharSobreTelaCodigo {
-    position: relative;
-    top: 0;
-    right: 5px;
+    margin-top: 0;
+    margin-right: 7px;
     float: right;
     width: 25px;
     height: 25px;
@@ -439,13 +445,16 @@ body {
 .campoSobreTelaSenha {
     position: fixed;
     display: none;
-    background-color: #d6d6d6;
-    width: 300px;
-    height: fit-content;
+    background-color: #F7FAFF;
+    width: 400px;
+    height: 250px;
+    border: 1px solid black;
+    min-height: auto;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
     justify-items: center;
-    padding: 8px 0 10px 0;
+    padding: 10px 0 12px 0;
+
 
     /* Centralização */
     top: 50%;
@@ -454,18 +463,18 @@ body {
 }
 
 .campoSobreTelaSenha input {
-    width: 200px;
-    height: 26px;
+    width: 350px;
+    height: 38px;
     border: 1px solid #222222;
     border-radius: 6px;
-    margin-bottom: 10px;
     padding-left: 5px;
+    margin-bottom: 10px;
 }
 
 .btnVoltarLoginSobreTelaCodigo {
     background-color: #DE7820;
     border: none;
-    height: 28px;
+    height: 38px;
     cursor: pointer;
     border-radius: 5px;
     color: #F7FAFF;
@@ -494,9 +503,8 @@ body {
 }
 
 .btnFecharSobreTelaSenha {
-    position: relative;
-    top: 0;
-    right: 5px;
+    margin-top: 0;
+    margin-right: 7px;
     float: right;
     width: 25px;
     height: 25px;
@@ -509,6 +517,7 @@ body {
 .btnFecharSobreTelaSenha:hover {
     color: #DE7820;
 }
+
 .campo {
     display: flex;
     position: relative;
@@ -534,6 +543,27 @@ body {
     -moz-appearance: none;
     cursor: pointer;
 }
+
+.opcSeguranca {
+    background-color: #F7FAFF;
+    color: #000000;
+}
+
+.opcGestor {
+    background-color: #F7FAFF;
+    color: #000000;
+}
+
+.opcSeguranca:hover {
+    background-color: #DE7820;
+    color: #F7FAFF;
+}
+
+.opcGestor:hover {
+    background-color: #DE7820;
+    color: #F7FAFF;
+}
+
 .campo input::placeholder {
     color: #333;
     opacity: 1;
@@ -550,6 +580,7 @@ body {
     -moz-appearance: none;
     cursor: pointer;
 }
+
 .seta {
     position: absolute;
     right: 12px;
@@ -561,3 +592,4 @@ body {
     transform: translateY(-70%) rotate(45deg);
     pointer-events: none;
 }
+.select-container2{margin-top: 10px;}

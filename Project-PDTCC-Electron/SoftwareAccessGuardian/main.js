@@ -52,7 +52,7 @@ function janelaInicio() {
         mode: 'detach'
     });
 
-    janelaSeguranca.loadFile('pages/tela_do_seguranca.html');
+    janelaSeguranca.loadFile('pages/inicio.html');
 
     return janelaSeguranca;
 }

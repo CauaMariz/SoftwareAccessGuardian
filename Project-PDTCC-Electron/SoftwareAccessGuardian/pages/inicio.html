@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início</title>
     <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/menuLateral.css">
 </head>
+
 <body>
     <!-- Menu lateral recolhível -->
     <aside class="menu-lateral" id="menuLateral" aria-label="Menu principal">
@@ -19,8 +21,8 @@
             <span class="menu-texto nome-sistema">Access Guardian</span>
         </div>
 
-        <button type="button" class="menu-toggle" id="btnAlternarMenu"
-                aria-label="Recolher menu" aria-expanded="true" title="Recolher menu">
+        <button type="button" class="menu-toggle" id="btnAlternarMenu" aria-label="Recolher menu" aria-expanded="true"
+            title="Recolher menu">
             <span class="seta-menu" id="setaMenu">‹</span>
         </button>
 
@@ -41,14 +43,23 @@
 
             <button type="button" class="menu-link" id="btnSobreNos" title="Sobre nós">
                 <span class="menu-icone" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path></svg>
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M12 11v5"></path>
+                        <path d="M12 8h.01"></path>
+                    </svg>
                 </span>
                 <span class="menu-texto">Sobre nós</span>
             </button>
 
             <button type="button" class="menu-link" id="btnSuporte" title="Suporte">
                 <span class="menu-icone" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M3 13v-2a9 9 0 0 1 18 0v2"></path><path d="M3 13h3v6H5a2 2 0 0 1-2-2v-4Z"></path><path d="M21 13h-3v6h1a2 2 0 0 0 2-2v-4Z"></path><path d="M18 19c-1 2-3 2-5 2"></path></svg>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 13v-2a9 9 0 0 1 18 0v2"></path>
+                        <path d="M3 13h3v6H5a2 2 0 0 1-2-2v-4Z"></path>
+                        <path d="M21 13h-3v6h1a2 2 0 0 0 2-2v-4Z"></path>
+                        <path d="M18 19c-1 2-3 2-5 2"></path>
+                    </svg>
                 </span>
                 <span class="menu-texto">Suporte</span>
             </button>
@@ -62,36 +73,44 @@
         <!-- Painel original de configurações, agora aberto pelo menu lateral -->
         <div class="campoConfig2" id="campoConfig2" aria-hidden="true">
             <button id="btnFecharMenu" class="btnFecharMenu" aria-label="Fechar configurações" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
 
 
             <ul class="itensConfig">
                 <li class="itemTextConfig">Configurações</li>
-                <li class="itemTextModoIluminacao"><p class="textModoIluminacao">Modo de iluminação</p></li>
+                <li class="itemTextModoIluminacao">
+                    <p class="textModoIluminacao">Modo de iluminação</p>
+                </li>
                 <li class="itemModoIluminacao">
                     <select name="modoIluminacao" id="modoIluminacao">
                         <option value="claro">Claro</option>
                         <option value="escuro">Escuro</option>
                     </select>
                 </li>
-                <li class="itemTextAcessibilidaDe"><p class="textAcessibilidade">Acessibilidade</p></li>
+                <li class="itemTextAcessibilidaDe">
+                    <p class="textAcessibilidade">Acessibilidade</p>
+                </li>
                 <li class="itemConfig1">Configuração 1</li>
                 <li class="itemConfig2">Configuração 2</li>
                 <li class="itemConfig3">Configuração 3</li>
                 <li class="itemConfig4">Configuração 4</li>
             </ul>
         </div>
-        
+
 
         <!-- Painel Sobre nós -->
         <section class="painel-info" id="painelSobreNos" aria-hidden="true" aria-labelledby="tituloSobreNos">
             <button type="button" class="fechar-painel-info" data-fechar-painel aria-label="Fechar Sobre nós">×</button>
             <h2 id="tituloSobreNos">Sobre nós</h2>
-            <p>O Access Guardian é um projeto voltado ao gerenciamento e à verificação de acesso por meio de cartões RFID.</p>
-            <p>O sistema integra a interface de controle com um leitor de cartões e uma catraca, ajudando a visualizar o status de acesso.</p>
+            <p>O Access Guardian é um projeto voltado ao gerenciamento e à verificação de acesso por meio de cartões
+                RFID.</p>
+            <p>O sistema integra a interface de controle com um leitor de cartões e uma catraca, ajudando a visualizar o
+                status de acesso.</p>
         </section>
 
         <!-- Painel Suporte -->
@@ -100,26 +119,28 @@
             <h2 id="tituloSuporte">Suporte</h2>
             <p>Precisa de ajuda para utilizar o Access Guardian?</p>
             <p>Entre em contato com o responsável pelo projeto ou com a equipe de suporte da sua instituição.</p>
-            <p class="aviso-suporte">Configure aqui os dados reais de contato da equipe quando estiverem disponíveis.</p>
+            <p class="aviso-suporte">Configure aqui os dados reais de contato da equipe quando estiverem disponíveis.
+            </p>
         </section>
 
-         <!--
+        <!--
             Este campo content-page abriga todo o conteudo principal exceto a parte de configuracao
         -->
 
         <section class="content-page">
 
-            
-          <!--
+
+            <!--
                 Este bloco1 é o campo que contem a introducao do site. 
             -->
 
             <div class="bloco1-content-page">
                 <img src="../images/logos/logo_fundo_branco.png" alt="Logo Access Guardian" class="logo-content-page">
                 <p class="txt-bemVindo-content-page">Bem-vindo (a) ao <br> Access Guardian</p>
-                <p class="txt-introdutivo-content-page">O Access Guardian auxilia no gerenciamento de acesso, integrando a identificação por cartão e a interface de controle. Entre com sua conta para continuar.</p>
+                <p class="txt-introdutivo-content-page">O Access Guardian auxilia no gerenciamento de acesso, integrando
+                    a identificação por cartão e a interface de controle. Entre com sua conta para continuar.</p>
             </div>
-            
+
             <!--
                 Este é o bloco2 que contem toda a informacao de login do usuario
             -->
@@ -127,64 +148,94 @@
             <div class="bloco2-content-page">
                 <p class="title-login-content-page">Login</p>
 
-                  <!--
+                <!--
                         Este é o formulario que abriga os inputs e dereciona o usuario para as proximas etapas
                         -->
 
                 <form action="" class="form-login-content-page" id="formLogin">
                     <input type="email" id="emailUser" class="input-email-content-page" placeholder="Email:" required>
-                    <input type="password" id="senhaUser" class="input-senha-content-page" placeholder="Senha:" required>
-                    <p class="txt-esqueceuSenha-content-page">Esqueceu sua senha? <button type="button" class="btnCliqueAqui">Clique aqui!</button></p>
+                    <input type="password" id="senhaUser" class="input-senha-content-page" placeholder="Senha:"
+                        required>
+                    <div class="campo select-container2">
+                        <select id="funcao2" required>
+                            <option value="" selected disabled>Selecione sua função:</option>
+                            <option value="seguranca" class="opcSeguranca">Segurança</option>
+                            <option value="gestor" class="opcGestor">Gestor</option>
+                        </select>
+                        <span class="seta"></span>
+                    </div>
+                    <p class="txt-esqueceuSenha-content-page">Esqueceu sua senha? <button type="button"
+                            class="btnCliqueAqui">Clique aqui!</button></p>
                     <input type="submit" class="btn-login-content-page" value="Fazer Login">
-                    <p class="txt-cadastrase-content-page">Não possui login? <a href="cadastroSeguranca.html">Cadastre-se</a></p>
+                    <p class="txt-cadastrase-content-page">Não possui login? <a
+                            href="cadastroSeguranca.html">Cadastre-se</a></p>
                     <div id="resultadoLogin"></div>
                 </form>
 
                 <div class="campoSobreTelaEmail">
-                    <button id="btnFecharSobreTelaEmail" class="btnFecharSobreTelaEmail" aria-label="Fechar alteração de senha" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <button id="btnFecharSobreTelaEmail" class="btnFecharSobreTelaEmail"
+                        aria-label="Fechar alteração de senha" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                     </button>
                     <p class="titleSobreTela">Alteração de senha</p>
-                    <div class="campo select-container">
-                        <select id="funcao" required>
-                            <option value="" selected disabled>Selecione sua função:</option>
-                            <option value="seguranca">Segurança</option>
-                            <option value="gestor">Gestor</option>
-                        </select>
-                        <span class="seta"></span>
-                    </div>
                     <form action="" id="formEnviarCodigo">
                         <p class="digiteEmailSobreTelaEmail">Digite seu email:</p>
                         <input type="email" class="inputSobreTelaEmail" id="emailSobreTelaEmail" required>
+                        <div class="campo select-container">
+                            <select id="funcao" required>
+                                <option value="" selected disabled>Selecione sua função:</option>
+                                <option value="seguranca" class="opcSeguranca">Segurança</option>
+                                <option value="gestor" class="opcGestor">Gestor</option>
+                            </select>
+                            <span class="seta"></span>
+                        </div>
                         <button class="enviarCodigoSobreTelaEmail" type="button">Enviar código</button>
                     </form>
                 </div>
 
                 <div class="campoSobreTelaCodigo">
-                    <button id="btnFecharSobreTelaCodigo" class="btnFecharSobreTelaCodigo" aria-label="Fechar código" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="18" x2="18" y2="6"></line></svg>
+                    <button id="btnFecharSobreTelaCodigo" class="btnFecharSobreTelaCodigo" aria-label="Fechar código"
+                        type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                     </button>
                     <p class="titleSobreTela">Alteração de senha</p>
                     <form action="" id="formConfirmarCodigo">
                         <p class="digiteCodigoSobreTelaCodigo">Digite o código enviado no seu email:</p>
-                        <input type="text" inputmode="numeric" minlength="6" maxlength="6" class="inputSobreTelaCodigo" id="codigoSobreTelaCodigo" required>
+                        <input type="text" inputmode="numeric" minlength="6" maxlength="6" class="inputSobreTelaCodigo"
+                            id="codigoSobreTelaCodigo" required>
                         <p class="txtNaoRecebeuSobreTelaCodigo">Não recebeu? Reenviar em 30 segundos</p>
-                        <button class="btnConfirmarSobreTelaCodigo" type="button" onclick="confirmarCodigo()">Confirmar</button>
+                        <button class="btnConfirmarSobreTelaCodigo" type="button"
+                            onclick="confirmarCodigo()">Confirmar</button>
                     </form>
                 </div>
 
 
                 <div class="campoSobreTelaSenha">
-                    <button id="btnFecharSobreTelaSenha" class="btnFecharSobreTelaSenha" aria-label="Fechar nova senha" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="18" x2="18" y2="6"></line></svg>
+                    <button id="btnFecharSobreTelaSenha" class="btnFecharSobreTelaSenha" aria-label="Fechar nova senha"
+                        type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                     </button>
                     <p class="titleSobreTela">Alteração de senha</p>
 
 
                     <form action="" id="formNovaSenha">
                         <p class="digiteSenhaSobreTelaSenha">Nova senha:</p>
-                        <input type="password" class="inputSobreTelaSenha" id="senhaSobreTelaSenha" placeholder="Nova senha" required>
-                        <input type="password" class="inputSobreTelaSenha" id="confirmaSenhaSobreTelaSenha" placeholder="Confirme a nova senha" required>
+                        <input type="password" class="inputSobreTelaSenha" id="senhaSobreTelaSenha"
+                            placeholder="Nova senha" required>
+                        <input type="password" class="inputSobreTelaSenha" id="confirmaSenhaSobreTelaSenha"
+                            placeholder="Confirme a nova senha" required>
                         <button type="button" class="btnVoltarLoginSobreTelaCodigo">Voltar para login</button>
                     </form>
                 </div>
@@ -192,7 +243,7 @@
         </section>
     </main>
 
-     <!--
+    <!--
         Aqui é onde acaba todo o conteudo principal, main-content e content-page
     -->
 
@@ -201,4 +252,5 @@
     <script src="../renderer/scriptSobreTelasInicio.js"></script>
     <script src="../renderer/scriptMenuLateral.js"></script>
 </body>
+
 </html>

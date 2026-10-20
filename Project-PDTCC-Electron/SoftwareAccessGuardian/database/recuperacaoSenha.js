@@ -52,8 +52,8 @@ async function salvarCodigoRecuperacao(email, tipoUser, codigo) {
 
   const sql = `
     UPDATE ${usuario.tabela}
-        SET codigo_recuperacao = ?,
-            expiracao_codigo = DATE_ADD(NOW(), INTERVAL 10 MINUTE)
+        SET codigoRecuperacao = ?,
+            expiracaoCodigoRecuperacao = DATE_ADD(NOW(), INTERVAL 10 MINUTE)
         WHERE ${usuario.colunaEmail} = ?
         LIMIT 1
   `;
@@ -69,8 +69,8 @@ async function validarCodigoRecuperacao(email, tipoUser, codigo) {
         SELECT ${usuario.colunaEmail}
         FROM ${usuario.tabela}
         WHERE ${usuario.colunaEmail} = ?
-          AND codigo_recuperacao = ?
-          AND expiracao_codigo > NOW()
+          AND codigoRecuperacao = ?
+          AND expiracaoCodigoRecuperacao > NOW()
         LIMIT 1
     `;
 
@@ -89,11 +89,11 @@ async function atualizarSenhaRecuperacao(
   const sql = `
         UPDATE ${usuario.tabela}
         SET ${usuario.colunaSenha} = ?,
-            codigo_recuperacao = NULL,
-            expiracao_codigo = NULL
+            codigoRecuperacao = NULL,
+            expiracaoCodigoRecuperacao = NULL
         WHERE ${usuario.colunaEmail} = ?
-          AND codigo_recuperacao = ?
-          AND expiracao_codigo > NOW()
+          AND codigoRecuperacao = ?
+          AND expiracaoCodigoRecuperacao > NOW()
         LIMIT 1
     `;
 
